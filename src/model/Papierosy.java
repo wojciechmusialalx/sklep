@@ -16,6 +16,13 @@ public class Papierosy extends Produkt {
 
     @Override
     public String getTyp() {
-        return "papierosy";
+        return "P";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\t" +
+                this.rodzaj + "\t" +
+                this.ilosc;
     }
 }
