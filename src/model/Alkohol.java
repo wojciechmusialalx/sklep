@@ -24,4 +24,9 @@ public class Alkohol {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return this.nazwa + " - " + this.cena + " PLN";
+    }
 }

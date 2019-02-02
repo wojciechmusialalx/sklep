@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,6 +36,8 @@ public class Sklep {
     }
 
     public void wyswietl() {
-        System.out.println(alkohole);
+        for (Alkohol alkohol : alkohole) {
+            System.out.println(alkohol);
+        }
     }
 }

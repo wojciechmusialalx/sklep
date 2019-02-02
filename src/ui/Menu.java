@@ -1,6 +1,7 @@
 package ui;
 
 import model.Alkohol;
+import model.Sklep;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
@@ -9,6 +10,9 @@ public class Menu {
 
     public void wyswietl() {
         Scanner wejscie = new Scanner(System.in);
+        Sklep sklep = new Sklep("Alkohole w akademiku");
+        sklep.dodajAlkohol(new Alkohol("cytryna", BigDecimal.TEN, "0.7l", "40%"));
+        sklep.dodajAlkohol(new Alkohol("kawa", BigDecimal.TEN, "0.75l", "45%"));
 
         System.out.println("1 - dodaj alkohol");
         System.out.println("2 - usun alkohol");
@@ -23,13 +27,27 @@ public class Menu {
 
             switch (wybor) {
                 case "1":
-                    System.out.println("dodawanie produktu");
+                    System.out.print("Podaj nazwe: ");
+                    String nazwe = wejscie.nextLine();
+
+                    System.out.print("Podaj cene: ");
+                    BigDecimal cena = wejscie.nextBigDecimal();
+                    wejscie.nextLine();
+
+                    System.out.print("Podaj litraz: ");
+                    String litraz = wejscie.nextLine();
+
+                    System.out.print("Podaj procent: ");
+                    String procent = wejscie.nextLine();
+
+                    Alkohol alkohol = new Alkohol(nazwe, cena, litraz, procent);
+                    sklep.dodajAlkohol(alkohol);
                     break;
                 case "2":
                     System.out.println("usun");
                     break;
                 case "3":
-                    System.out.println("wyswietl");
+                    sklep.wyswietl();
                     break;
                 case "q":
                     System.out.println("Koniec programu");
