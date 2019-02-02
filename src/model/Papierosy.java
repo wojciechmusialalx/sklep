@@ -13,4 +13,9 @@ public class Papierosy extends Produkt {
         this.rodzaj = rodzaj;
         this.ilosc = ilosc;
     }
+
+    @Override
+    public String getTyp() {
+        return "papierosy";
+    }
 }

@@ -13,4 +13,9 @@ public class Alkohol extends Produkt {
         this.litraz = litraz;
         this.procentAlkoholu = procentAlkoholu;
     }
+
+    @Override
+    public String getTyp() {
+        return "alko";
+    }
 }
