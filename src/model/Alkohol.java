@@ -2,34 +2,15 @@ package model;
 
 import java.math.BigDecimal;
 
-public class Alkohol {
+public class Alkohol extends Produkt {
 
-    private static int generator = 1;
-
-    private int id;
-    private String nazwa;
-    private BigDecimal cena;
     private String litraz;
     private String procentAlkoholu;
 
     public Alkohol(String nazwa, BigDecimal cena,
                    String litraz, String procentAlkoholu){
-        this.id = generator++;
-        this.nazwa = nazwa;
-        this.cena = cena;
+        super(nazwa, cena);
         this.litraz = litraz;
         this.procentAlkoholu = procentAlkoholu;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public String toString() {
-        return this.id + "\t"
-                + this.nazwa + "\t"
-                + this.cena + " PLN";
-
     }
 }
