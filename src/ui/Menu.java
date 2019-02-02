@@ -42,12 +42,17 @@ public class Menu {
 
                     Alkohol alkohol = new Alkohol(nazwe, cena, litraz, procent);
                     sklep.dodajAlkohol(alkohol);
+                    System.out.println("Utworzono nowy alkohol");
                     break;
                 case "2":
-                    System.out.println("usun");
+                    System.out.print("Podaj id do usuniecia: ");
+                    int id = wejscie.nextInt();
+                    wejscie.nextLine();
+                    sklep.usunAlkohol(id);
+                    System.out.println("Usunieto alkohol z id: " + id);
                     break;
                 case "3":
-                    sklep.wyswietl();
+                    System.out.println(sklep);
                     break;
                 case "q":
                     System.out.println("Koniec programu");

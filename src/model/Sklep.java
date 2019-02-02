@@ -35,9 +35,12 @@ public class Sklep {
         }
     }
 
-    public void wyswietl() {
+    public String toString() {
+        String rezultat = "id\tnazwa\tcena\n";
         for (Alkohol alkohol : alkohole) {
-            System.out.println(alkohol);
+            rezultat += alkohol + "\n";
         }
+
+        return rezultat;
     }
 }
