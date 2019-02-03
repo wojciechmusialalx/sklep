@@ -7,6 +7,9 @@ public class Alkohol extends Produkt {
     private String litraz;
     private String procentAlkoholu;
 
+    public Alkohol() {
+    }
+
     public Alkohol(String nazwa, BigDecimal cena,
                    String litraz, String procentAlkoholu){
         super(nazwa, cena);
@@ -17,6 +20,22 @@ public class Alkohol extends Produkt {
     @Override
     public String getTyp() {
         return "alko";
+    }
+
+    public String getLitraz() {
+        return litraz;
+    }
+
+    public void setLitraz(String litraz) {
+        this.litraz = litraz;
+    }
+
+    public String getProcentAlkoholu() {
+        return procentAlkoholu;
+    }
+
+    public void setProcentAlkoholu(String procentAlkoholu) {
+        this.procentAlkoholu = procentAlkoholu;
     }
 
     @Override

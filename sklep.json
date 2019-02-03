@@ -1,0 +1,18 @@
+{
+  "nazwa" : "Alkohole w akademiku",
+  "produkty" : [ {
+    "type" : "alkohol",
+    "id" : 1,
+    "nazwa" : "alko",
+    "cena" : 19,
+    "litraz" : "0.8l",
+    "procentAlkoholu" : "40%"
+  }, {
+    "type" : "papierosy",
+    "id" : 2,
+    "nazwa" : "malboro",
+    "cena" : 20,
+    "rodzaj" : "mentolowe",
+    "ilosc" : 20
+  } ]
+}

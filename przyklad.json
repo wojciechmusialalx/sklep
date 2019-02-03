@@ -1,0 +1,19 @@
+{
+  "nazwa" : "Alkohole",
+  "produkty" : [
+    {
+      "id": 1,
+      "type": "alkohol",
+      "nazwa": "piwo",
+      "cena": 10,
+      "litraz": "0.7l"
+    },
+    {
+      "id": 2,
+      "type": "papierosy",
+      "nazwa": "malboro",
+      "cena": 10,
+      "rodzaj": "mentolowe"
+    }
+  ]
+}

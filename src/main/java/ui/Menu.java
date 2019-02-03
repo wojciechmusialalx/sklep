@@ -1,6 +1,8 @@
 package ui;
 
+import io.OperacjePlikowe;
 import io.PlikiBinarne;
+import io.PlikiJson;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -12,12 +14,22 @@ public class Menu {
 
     public void wyswietl() {
         Scanner wejscie = new Scanner(System.in);
-        PlikiBinarne pliki = new PlikiBinarne();
+
+        OperacjePlikowe pliki;
+
+        System.out.print("Podaj format zapisu plikow (1 - json, 2 - bin: ");
+        String wyborFormatu = wejscie.nextLine();
+
+        if (wyborFormatu.equalsIgnoreCase("1")) {
+            pliki = new PlikiJson();
+        } else {
+            pliki = new PlikiBinarne();
+        }
+
         Sklep sklep;
         try {
             sklep = pliki.odczyt();
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println("Nie udalo sie wczytac sklepu");
             sklep = new Sklep("Alkohole w akademiku");
         }

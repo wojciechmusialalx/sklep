@@ -4,7 +4,7 @@ import model.Sklep;
 
 import java.io.*;
 
-public class PlikiBinarne {
+public class PlikiBinarne implements OperacjePlikowe {
 
     public Sklep odczyt() throws Exception {
         Sklep sklep;
