@@ -1,5 +1,6 @@
 package ui;
 
+import io.PlikiBinarne;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -11,10 +12,15 @@ public class Menu {
 
     public void wyswietl() {
         Scanner wejscie = new Scanner(System.in);
-        Sklep sklep = new Sklep("Alkohole w akademiku");
-        sklep.dodaj(new Alkohol("cytryna", BigDecimal.TEN, "0.7l", "40%"));
-        sklep.dodaj(new Alkohol("kawa", BigDecimal.TEN, "0.75l", "45%"));
-        sklep.dodaj(new Papierosy("malboro", new BigDecimal("20.5"), "grube", 20));
+        PlikiBinarne pliki = new PlikiBinarne();
+        Sklep sklep;
+        try {
+            sklep = pliki.odczyt();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Nie udalo sie wczytac sklepu");
+            sklep = new Sklep("Alkohole w akademiku");
+        }
 
         System.out.println("1 - dodaj alkohol");
         System.out.println("2 - dodaj papierosy");
@@ -78,6 +84,7 @@ public class Menu {
                     System.out.println(sklep);
                     break;
                 case "q":
+                    pliki.zapis(sklep);
                     System.out.println("Koniec programu");
                     break;
                 default:
